@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Api;
 use Illuminate\Http\Request;
 
 use App\Http\Requests;
+use App\Transformers\CaseTransformer;
 use App\Cases;
 
 class CasesController extends BaseController
@@ -13,9 +14,10 @@ class CasesController extends BaseController
     
 	public function index()
 	{
-	   $cases = Cases::all();
+	   $cases = Cases::paginate(5);
 
-        return $this->response->array($cases);
+        return $this->response->paginator($cases, new CaseTransformer);
+       // return $this->response->array($cases);
 	}
 
 	public function show($id)
@@ -34,6 +36,7 @@ class CasesController extends BaseController
 	 
 	    $case->caseno = $request->input('caseno');
 	    $case->title = $request->input('title');
+	    $case->description = $request->input('description');
 	 
 	
 	    if($case->save())

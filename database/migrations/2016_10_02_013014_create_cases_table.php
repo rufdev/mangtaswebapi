@@ -21,7 +21,7 @@ class CreateCasesTable extends Migration
             $table->string('caseno');
             
             $table->string('title');
-           
+
             $table->timestamps();
         });
     }

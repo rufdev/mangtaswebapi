@@ -8,7 +8,7 @@ class Cases extends Model
 {
     //
 
-    protected $fillable = ['caseno','title'];
+    protected $fillable = ['caseno','title','description'];
 
     public function payments()
     {

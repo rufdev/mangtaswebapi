@@ -15,6 +15,10 @@ Route::get('/', function () {
     return view('welcome');
 });
 
+Route::get('/ui', function () {
+    return view('uipage');
+});
+
 $api = app('Dingo\Api\Routing\Router');
 
 $api->version('v1', function ($api) {

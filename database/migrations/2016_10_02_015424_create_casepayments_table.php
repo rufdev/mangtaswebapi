@@ -21,7 +21,7 @@ class CreateCasepaymentsTable extends Migration
             $table->string('cases_id');
             
             $table->double('amount',18,4);
-           
+
             $table->timestamps();
         });
     }

@@ -15,3 +15,8 @@ class CasePayments extends Model
     	return $this->belongsTo('App\Case');
     }
 }
+
+
+
+
+
