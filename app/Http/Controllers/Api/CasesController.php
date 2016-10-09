@@ -14,10 +14,11 @@ class CasesController extends BaseController
     
 	public function index()
 	{
-	   $cases = Cases::paginate(5);
+	   // $cases = Cases::paginate(5);
+	   $cases = Cases::all();
 
-        return $this->response->paginator($cases, new CaseTransformer);
-       // return $this->response->array($cases);
+        // return $this->response->paginator($cases, new CaseTransformer);
+       return $this->response->array($cases);
 	}
 
 	public function show($id)
